@@ -1,6 +1,6 @@
 # webpack-template
 
-> A Vue.js project
+> A project simple UI based on vue.js
 
 ## Build Setup
 
@@ -8,7 +8,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8090
 npm run dev
 
 # build for production with minification
