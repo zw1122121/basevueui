@@ -1,166 +1,104 @@
 <template>
-  <el-table
-    :data="tableData3"
-    border
-    style="width: 100%">
-    <el-table-column
-      prop="date"
-      label="日期"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="name"
-      label="姓名"
-      width="180">
-    </el-table-column>
-    <el-table-column
-      prop="address"
-      label="地址">
-    </el-table-column>
-  </el-table>
+  <div>
+    <el-row>
+
+    </el-row>
+    <el-table
+      :data="users"
+      border
+      style="width: 100%">
+      <el-table-column
+        prop="userName"
+        label="用户名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="nikeName"
+        label="人员姓名"
+        width="180">
+      </el-table-column>
+      <el-table-column
+        prop="createTime"
+        label="创建时间">
+      </el-table-column>
+      <el-table-column
+        prop="lastLoginTime"
+        label="最后登录时间">
+      </el-table-column>
+      <el-table-column label="操作">
+        <template scope="scope">
+          <el-button
+            size="small">编辑</el-button>
+          <el-button
+            size="small"
+            type="danger">删除</el-button>
+        </template>
+      </el-table-column>
+    </el-table>
+    <el-row>
+      <div style="float: right;">
+        <el-pagination
+          :current-page="page._page"
+          :page-size="page._limit"
+          layout="total, sizes, prev, pager, next, jumper"
+          :total="page.total"
+          @size-change = "handleSizeChange"
+          @current-change = "handlePageChange"
+        >
+        </el-pagination>
+      </div>
+    </el-row>
+  </div>
+
 </template>
 
 <script>
+  import Affix from './Affix'
   export default {
     data() {
       return {
-        tableData3: [{
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-08',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-06',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-07',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }]
+        users : [],
+        page : {
+          _page : 1,
+          _limit : 10,
+          total : 0
+        }
       }
+    },
+    methods: {
+      getUserPage(param) {
+        let {_page = 1, _limit = 10, total = 0} = param ? param : {}
+        this.axios.get("/api/users", {
+          params: {
+            _limit,
+            _page,
+          }
+        }).then(response => {
+          this.users = response.data
+          this.page.total = response.data.length * 6
+        })
+      },
+      handleSizeChange(size) {
+        this.page._limit = size
+        this.getUserPage(this.page)
+      },
+      handlePageChange(page) {
+        this.page._page = page
+        this.getUserPage(this.page)
+      }
+    },
+    created: function () {
+     this.getUserPage()
+    },
+    components: {
+      Affix
     }
   }
 </script>
 
-<style scoped>
+<style>
+  .ivu-affix {
+    position: fixed;
+    z-index: 20;
+  }
 </style>
