@@ -7,6 +7,18 @@
       :data="users"
       border
       style="width: 100%">
+      <el-table-column type="expand">
+        <template scope="props">
+          <p>State: {{ props.row.userName }}</p>
+          <p>City: {{ props.row.nikeName }}</p>
+          <p>Address: {{ props.row.createTime }}</p>
+          <p>Zip: {{ props.row.lastLoginTime }}</p>
+        </template>
+      </el-table-column>
+      <el-table-column
+        type="selection"
+        width="55">
+      </el-table-column>
       <el-table-column
         prop="userName"
         label="用户名"
@@ -41,7 +53,7 @@
           :current-page="page._page"
           :page-size="page._limit"
           layout="total, sizes, prev, pager, next, jumper"
-          :total="page.total"
+          :total="400"
           @size-change = "handleSizeChange"
           @current-change = "handlePageChange"
         >
@@ -54,6 +66,7 @@
 
 <script>
   import Affix from './Affix'
+  import BasicForm from './BasicForm'
   export default {
     data() {
       return {
@@ -91,7 +104,7 @@
      this.getUserPage()
     },
     components: {
-      Affix
+      Affix,BasicForm
     }
   }
 </script>

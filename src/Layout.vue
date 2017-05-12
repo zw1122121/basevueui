@@ -32,6 +32,7 @@
     height: 60px;
     z-index : 2048;
     background: #2b83f9 linear-gradient(143deg, #2945cb 20%, #2b83f9 81%, #3a9dff);
+    background-color: #2b83f9\9;
   }
   .sidebar {
     position: fixed;

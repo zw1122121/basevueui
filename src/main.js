@@ -4,9 +4,13 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import elementUI from 'element-ui'
-import axios from 'axios'
 import 'element-ui/lib/theme-default/index.css'
+import 'font-awesome/css/font-awesome.css'
 import './assets/css/app-style.css'
+import 'core-js/es6/promise.js'
+
+require('es6-promise').polyfill()
+const axios = require('axios')
 
 Vue.config.productionTip = false
 Vue.use(elementUI);

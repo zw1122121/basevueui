@@ -1,3 +1,13 @@
+
 .white-theme .el-menu {
   background-color: #fff;
+}
+.el-autocomplete-suggestion__wrap, ul.el-pager li {
+  box-sizing: content-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.el-pagination button, .el-pagination span {
+  height: 30px\9;
 }
