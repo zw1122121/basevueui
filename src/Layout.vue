@@ -30,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 60px;
-    z-index : 2048;
+    z-index : 1024;
     background: #2b83f9 linear-gradient(143deg, #2945cb 20%, #2b83f9 81%, #3a9dff);
     background-color: #2b83f9\9;
   }
@@ -41,7 +41,7 @@
     bottom: 0;
     width: 200px;
     border-right: 1px solid #d4d8e2;
-    z-index : 2048;
+    z-index : 1024;
     overflow: auto;
     background-color: #fff;
   }

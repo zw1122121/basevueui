@@ -7,7 +7,7 @@ import elementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 import 'font-awesome/css/font-awesome.css'
 import './assets/css/app-style.css'
-import 'core-js/es6/promise.js'
+import './assets/module-css/show-style.css'
 
 require('es6-promise').polyfill()
 const axios = require('axios')
